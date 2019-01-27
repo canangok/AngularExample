@@ -11,8 +11,8 @@ export class AppComponent {
 
   //nesne olarak göndermemiz yeterli
   public options={
-    position:["bottom","right"],//aşağıda sağga gözüksün
-    timeOut:3000,//3 saniye boyunca gözüksün
-    lastOnBottom:true,//son notification en altta görülsün.
+    position:["bottom","right"],
+    timeOut:3000,
+    lastOnBottom:true,
   }
 }

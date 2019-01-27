@@ -12,8 +12,7 @@ export class CartSummaryComponent implements OnInit, DoCheck {
 
   constructor(private cartService: CartService) { }
 
-  //kaç adet ürün
-  totalCartItem: number; //sepetteki ürün adeti
+  totalCartItem: number;
   totalCartItemPrice: number;
   cartItems: CartItem[];
   ngOnInit() {

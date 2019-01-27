@@ -15,7 +15,6 @@ export class LoggedComponent implements DoCheck{
 
   ngDoCheck() {
       this.isLogged = this.accountService.isLoggedIn(); 
-//burdan true veya false gelmesine göre kullanıcıyı takip edeceğiz.
 
   }
 

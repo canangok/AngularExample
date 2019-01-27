@@ -6,7 +6,7 @@ import {CategoryService} from './category.service';
   selector: 'app-category',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css'],
-  providers:[CategoryService]//sadece buraya hizmet edeceği için buraya provider olarak tanımlıyoruz.
+  providers:[CategoryService]
 
 })
 export class CategoryComponent implements OnInit {

@@ -21,17 +21,10 @@ export class ShippingDetailComponent implements OnInit,ComponentCanDeactivate {
   model: ShippingDetail = new ShippingDetail("", "", true, -1);
   
   isDirty:boolean=false;
-  //sayfada dirty yani üzerinde çalışılmış bir kutucuk varsa o zaman biz bunu false döndürmeliyiz.
-//bu yüzden isDirty tanımadık dirty kirli değil ilk sayfaya geldiğinde.
+  
   canDeactivate():boolean{
-    //bu sayfadan başka bir noktaya gidebilir mi dirty nin tam tersini yazmamız gerek. 
-        return !this.isDirty; //tersi dönecek ondan ! koyduk.
+        return !this.isDirty; 
   }
-  
-  
-  //öncelikle şehirler varsa o şehirleri doldurmamız lazım.
-  //şimdilik elle yazıcaz şehirleri
-
   
   ngOnInit() {
     this.cities.push(
@@ -41,14 +34,13 @@ export class ShippingDetailComponent implements OnInit,ComponentCanDeactivate {
     )
   }
 
-  checkout(form: NgForm) {//ngform cinsinden bir form parametre olarak verdik form göndericez burdan
+  checkout(form: NgForm) {
       if(form.invalid){
         return;
       }
       this.cartService.clear();//sepeti boşalt
       this.notificationsService.info("Succesfull","Shopping completed");
-      this.router.navigate(["products"]);//bu işlemi yaptığu zaman kişiyi anasayfyaa göderelim.
-      //burada gerekli olan routera yönlendiriyoruz.
+      this.router.navigate(["products"]);//bu işlemi yaptığu zaman kişiyi anasayfaya göderelim.
 
   }
 

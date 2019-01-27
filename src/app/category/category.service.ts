@@ -5,7 +5,6 @@ import {Observable} from 'rxjs';
 
 import {Category} from './category';
 
-//import {map} from 'rxjs/operators';
 import 'rxjs/add/operator/map';
 
 @Injectable({
