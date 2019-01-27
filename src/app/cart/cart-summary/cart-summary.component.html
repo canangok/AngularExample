@@ -1,0 +1,30 @@
+<li *ngIf="cartItems.length>0;else cartEmptyContent" class="nav-item dropdown">
+  
+ 
+  <div class="dropdown">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+    Your cart: {{totalCartItemPrice |currency:'USD':true }}({{totalCartItem}})
+    </button>
+    <div class="dropdown-menu">
+      <a *ngFor="let item of cartItems" class="list-group-item">
+        <i class="btn btn-xs btn-danger fa fa-remove" aria-hidden="true" (click)="removeFromCart(item.product)"></i>
+      {{item.product.productName|uppercase}}({{item.quantity}})    
+    </a>        
+        <hr/> <a class="dropdown-item text-center" routerLink="my-cart"><strong>Go to Cart</strong> </a>
+    </div>
+  </div>
+ 
+</li>
+
+<ng-template #cartEmptyContent>
+    <li class="nav-item dropdown">
+  
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              Cart is empty
+        </a>
+      </li>
+</ng-template>
+
+
